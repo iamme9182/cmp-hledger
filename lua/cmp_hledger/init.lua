@@ -34,7 +34,7 @@ local split = function(str, sep)
 end
 
 local get_items = function(account_path)
-  local openPop = assert(io.popen(vim.b.hledger_bin .. ' accounts -f ' .. account_path))
+  local openPop = assert(io.popen(vim.b.hledger_bin .. ' accounts'))
   local output = openPop:read('*all')
   openPop:close()
   local t = split(output, "\n")
